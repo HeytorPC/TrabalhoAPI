@@ -4,6 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity 
@@ -18,8 +19,24 @@ public class Cliente {
 	private Long idade;
 	private String telefone;
 	private String email;
+	@ManyToOne
+	private Endereco endereco;
+	@ManyToOne
+	private Pedido pedido;
 	
 	
+	public Pedido getPedido() {
+		return pedido;
+	}
+	public void setPedido(Pedido pedido) {
+		this.pedido = pedido;
+	}
+	public Endereco getEndereco() {
+		return endereco;
+	}
+	public void setEndereco(Endereco endereco) {
+		this.endereco = endereco;
+	}
 	public Long getId() {
 		return id;
 	}

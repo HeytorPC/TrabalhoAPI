@@ -4,6 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity 
@@ -19,8 +20,16 @@ public class Endereco {
 	private String cidade;
 	private String numero;
 	private String complemento;
+	@OneToMany
+	private Cliente cliente;
 	
 	
+	public Cliente getCliente() {
+		return cliente;
+	}
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
+	}
 	public Long getId() {
 		return id;
 	}

@@ -2,12 +2,14 @@ package org.serratec.agencia.model;
 
 import java.time.LocalDate;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity 
@@ -22,8 +24,17 @@ public class Viagem {
 	private double valorUnitario;
 	@Enumerated (EnumType.STRING)
 	private StatusViagem statusViagem;
+	@OneToOne (cascade = CascadeType.ALL)
+	private Voo voo;
 	
 	
+	
+	public Voo getVoo() {
+		return voo;
+	}
+	public void setVoo(Voo voo) {
+		this.voo = voo;
+	}
 	public Long getId() {
 		return id;
 	}
