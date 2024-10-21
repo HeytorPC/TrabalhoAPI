@@ -2,12 +2,12 @@
 
 # Feito por:
 
-Heytor Pinel Cantelmo da Silva
-Guilherme Senna Pires
-Gabriel dos Santos Siqueira
-Mateus Azevedo Faria
-Victor Hugo Barros Schuenk
-Vitor Ferreira Leite de Paula
+- Heytor Pinel Cantelmo da Silva
+- Guilherme Senna Pires
+- Gabriel dos Santos Siqueira
+- Mateus Azevedo Faria
+- Victor Hugo Barros Schuenk
+- Vitor Ferreira Leite de Paula
 
 
 ## Descrição
