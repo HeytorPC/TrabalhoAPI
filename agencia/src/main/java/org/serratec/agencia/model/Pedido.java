@@ -88,4 +88,10 @@ public class Pedido {
 		this.desconto = desconto;
 	}
 	
+	public String toString() {
+		return "Pedido [id=" + id + ", dataPedido=" + dataPedido + ", metodoPagamento=" + metodoPagamento
+				+ ", statusPedido=" + statusPedido + ", valorTotal=" + valorTotal + ", valorLiquido=" + valorLiquido
+				+ ", valorBruto=" + valorBruto + ", desconto=" + desconto + ", cliente=" + cliente + "]";
+	}
+	
 }

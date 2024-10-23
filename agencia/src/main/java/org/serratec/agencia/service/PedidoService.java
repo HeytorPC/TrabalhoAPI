@@ -18,6 +18,9 @@ public class PedidoService {
 	@Autowired
 	private PedidoRepository repositorio;
 	
+	@Autowired
+	private EmailService emailService;
+	
 	public Optional<PedidoDto> buscarPorId(Long id) {
 		if (!repositorio.existsById(id)) {
 			return Optional.empty();
@@ -44,8 +47,10 @@ public class PedidoService {
 		return true;
 	}
 	
-	public PedidoDto salvarPedido(PedidoDto pedido) {
-		return PedidoDto.toDto(repositorio.save(pedido.toEntity()));
+	public PedidoDto salvarPedido(PedidoDto dto) {
+		Pedido pedidoEntity = repositorio.save(dto.toEntity());
+		emailService.enviarEmail("mateusazevedofaria@gmail.com", "Novo Pedido", pedidoEntity.toString());
+		return PedidoDto.toDto(pedidoEntity);
 	}
 	
 	public Optional<PedidoDto> alterarPedido(Long id, PedidoDto pedido) {
